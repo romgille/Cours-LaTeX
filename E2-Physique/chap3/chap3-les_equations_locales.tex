@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\title{Les équations locales}
+\author{Romain Gille}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\section{Théorème de la divergence ou théorème de Green-Ostrogradsky}
+\subsection{Enoncé du théorème}
+Si $\vec{A}(M)$ est un champ vectoriel partout défini et dérivable sur les domaines considérés, le flux de $\vec{A}(M)$ à travers toute la surface formée $\Sigma_f$ est égal à l'intégrale de sa divergence étendue à tout le domaine $\Omega$ délimité par $\Sigma_f$
+$$ \iint_{\Sigma_f}{\vec{A}(M \in \Sigma_f)}.\vec{dS} = \iiint_{\Omega}{div \vec{A}(M \in \Omega)}.dT$$
+\subsection{Application au théorème de Gauss}
+$$\iint_{\Sigma_f}{\vec{E}(M \in \Sigma_f)}.\vec{dS} = {{Q_int} \over {\epsilon_0}}$$
+Avec le théorème de la divergence : 
+$$\iiint_{\Omega}{div \vec{E}(M \in \Omega)}.dT = { 1 \over \epsilon_0} \iint_\Omega \rho(M \in \Omega).dT$$
+$$\iint_{\Omega}[ div \vec E(M) - {\rho(M) \over \epsilon_0} ].dT = 0$$ \\
+\\
+Equation de Maxwell-Gauss
+$$\forall dT \Rightarrow \forall M \in \Omega ~~~ div(\vec{E}(M)) = {\rho (M) \over \epsilon_0}$$
+\\
+C'est une équation locale qui permet par exemple de déterminer $\vec{E}(M)$
+\newpage
+\subsection{Application au flux de $\vec B$}
+$$\iint_{\Sigma_f}{\vec{B}(M \in \Sigma_f)}.\vec{dS} = 0$$
+Avec le théorème de la divergence : 
+$$\iiint_{\Omega}{div \vec{B}(M \in \Omega)}.dT = 0 ~~~ \forall dT \Rightarrow \forall M ~~~ div \vec{B}(M) = 0$$
+\\
+Remarque : \\
+$\forall M ~~~ div\vec{B}(M) = 0$ \\
+\\
+Signifie que $\vec B = \vec rot \vec A(M)$ \\
+\\
+Si $\vec A(M) = \vec A(M) + \vec grad ~ f(M)$ \\
+\\
+$\vec rot \vec A(M) = \vec rot \vec A + \vec rot(\vec grad ~ f) = \vec rot \vec A$
+\section{Théorème de Stocks}
+\subsection{Enoncé}
+La circulation de $\vec A(M)$ sur un contours fermé $\Gamma$ est égal au flux du rotationnel de $\vec A$ à travers une surface $\Sigma$ quelconque qui s'appuie sur $\Gamma$.
+$$\oint_\Gamma \vec A(M \in \Gamma).\vec dl = \iint_\Sigma \vec rot \vec A(M \in \Sigma).\vec dS$$
+\subsection{Application au théorème d'Ampère}
+$$\oint_\Gamma \vec B(M \in \Gamma).\vec dl = \mu_0 \iint_\Sigma \vec rot \vec A(M \in \Sigma).\vec dS$$ \\
+Avec le théorème de Stokes : 
+$$\iint_\Sigma \vec rot \vec B(M \in \Sigma). \vec ds = \mu_0 \iint_\Sigma \vec j(M \in \Sigma).\vec dS$$ \\
+Théorème d'Ampère local : \\
+$$ \forall dS \Rightarrow \vec rot \vec B(M) = \mu_0 \vec j(M)$$ \\
+On peut calculer $\vec B(M)$ à partir de cette relation.
+\subsection{Application à $\vec E$}
+En électrostatique, on établit : $$\int_A^B \vec E(M \in AB). \vec dl = V_A-V_B$$ \\
+Sur un contour fermé : $$ \oint_\Gamma \vec E(M \in \Gamma).\vec dl = 0 $$ \\
+Théorème de Stokes : 
+$$\iint_\Sigma \vec rot \vec E(M \in \Sigma).\vec dS = 0$$
+$$\Rightarrow \vec rot \vec E(M) = \vec 0$$ \\
+Ainsi en régime stationnaire $\forall M$ :
+$$div \vec E(M) = {\rho(M) \over \epsilon_0}$$
+$$div \vec B(M) = 0$$
+$\vec rot \vec E(M) = 0 ~~ \Rightarrow ~~ \exists V(M)$ tel que $ \vec E(M) = - \vec grad~V(M)$
+$$\vec rot \vec B(M) = \mu_0 \vec j$$
+\newpage
+\subsection{En régime quasi-statique}
+$$fem = e = - {d \Phi \over dt}$$
+$$\oint_\Gamma \vec E(M \in \Gamma, t).\vec dl = -{d \over dt} \iint_\Sigma \vec B(M \in \Sigma, t).\vec dS$$
+$$\iint_\Sigma \vec rot \vec E(M \in \Sigma, t).\vec dS = - \iint_\Sigma {\partial \vec B(M \in \Sigma, t) \over \partial t}.\vec dS$$
+$$\vec rot \vec E(M, t) = - {\partial \vec B(M, t) \over \partial t}$$ \\
+Un champ électrique peut être créé par une variation temporelle d'un champ magnétique.
+\end{document}
