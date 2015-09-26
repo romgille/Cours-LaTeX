@@ -1,0 +1,99 @@
+\documentclass[11pt,a4paper,french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\title{ESIEE E2 \\ Le champ magnétostatique}
+\author{Romain Gille}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\section{Le courant électrique}
+\subsection{Densité volumique de courant}
+Dans un référentiel donné, un courant électrique traduit un mouvement d'ensemble de charges électriques. \\
+Imaginons un petit volume $d\tau$ centré sur un point P dans lequel des charges en densité $\rho(P)$ se déplacent à la même vitesse $\vec v$. \\
+On définit le vecteur densité volumique de courant $\vec j(P)$ par $\vec j(P) = \rho(P)\vec v ~~~en~~~ A.m^{-2}$. \\ \\
+Remarque :
+\begin{itemize}
+\item S'il existe des charges différentes 'i' en densité $\rho_i$ avec une vitesse $\vec v_i$ :
+$$\vec j(P) = \sum_i \vec j_i(P) = \sum_i \rho_i(P) \vec v_i$$
+\item $\rho(P)$ est la densité de charge qui se déplacent.
+\item Si on impose un champ électrique $\vec E_{ext}$ : la force subie par chaque charge est de la forme $\vec F = q \vec E$. \\
+Dans un métal, seuls certains électrons sont capables de quitter les atomes d'origine. On les appelle électrons libres. \\
+Posons $n_+$ densité de charges supérieure à 0 par unité de volume : 
+$\rho_+(P) = n_+e$. \\
+Posons $n_-$ densité de charges inférieure à 0 par unité de volume : $\rho_-(P) = n_-e$.
+$$n_+ = n_- = n ~~~~~ \rho_+(P)+ \rho_-(P) = ne(1-1) = 0 = \rho(P)$$
+Sous l'effet de $\vec E$ supposons $n_i^-$ électrons libres avec une vitesse $$\vec v~~~:~~~\vec j = n_i^-(-e)\vec v$$
+L'intensité d'un courant est le nombre de charges qui traversent par unité de temps une surface donnée ($\Sigma_i$)
+$$dI = {dq \over dt} = {\rho d\tau \over dt} = {\rho v dt dS \over dt}$$
+$\rho$ est la charge contenue dans le tube de courant de longueur vdt et de section dS.
+$$I = \iint_\Sigma \vec j.\vec dS ~~ en ~~A.$$
+\end{itemize}
+\newpage
+\subsection{Densité surfacique de courant}
+Si le courant volumique se répartit sur une faible épaisseur (cas de conducteur en ruban) on invente une densité surfacique de courant $\vec j_s = \sigma \vec v$ \\($\sigma$ densité surfacique de courant).
+$$\vec j_s = \vec j_v .h$$
+\subsection{Densité linéique}
+On associe à $\vec j_v$ un courant linéique d'intensité I.
+\newpage
+\section{Origine du champ magnétostatique}
+\subsection{Loi de Biot et Savart}
+$$\vec dB(M) = {\mu_0 \over 4\pi}{I \vec dl \wedge \vec PM \over PM^3}$$
+Remarque : \\ \\
+Avec $\vec j(P)$ on remplace $I\vec dl$ par $\vec j(P)d\tau$.\\
+Avec $\vec j_s(P)$ on remplace $I\vec dl$ par $\vec j_sdS$. \\
+Si les courants sont confinés dans le volume $\Omega$, le champ magnétique total est la somme des champs magnétiques élémentaires.\\
+On applique donc le principe de superposition : 
+$$ex~:~~\vec B(M) = \iiint_\Omega {\mu_0 \over 4\pi}\vec j(P){d\tau \wedge \vec PM \over PM^3}$$
+Remarque :
+$${\vec PM \over PM^3} = {\vec PM \over PM}{1 \over PM^2} = \vec u_{PM}.{1 \over PM^2}$$
+$\mu_0$ est la perméabilité magnétique du vide. \\
+Dans le système internationnal : $\mu_0 = 4\pi.10^{-7} H.M^{-1}$.
+\newpage
+\section{Propriétés de symétrie}
+\begin{itemize}
+\item Par rapport à un plan de symétrie
+\begin{itemize}
+\item la composante de $\vec B(M)$ parallèle à ce plan est changée en son opposée.
+\item la composante de $\vec B(M)$ perpendiculaire à ce plan est conservée $\vec B(M) = \vec B(M')$.
+\item Si M appartient à un plan de symétrie de courant, $\vec B(M)$ est perpendiculaire à ce plan.
+\end{itemize}
+\item Par rapport à un plan d'anti-symétrie
+\begin{itemize}
+\item la composante de $\vec B(M)$ parallèle à ce plan est conservée.
+\item la composante de $\vec B(M)$ perpendiculaire à ce plan est changée en son opposée.
+\item Si M appartient à un plan d'anti-symétrie de courant, $\vec B(M)$ est parallèle à ce plan.
+\item Si M apartient à deux plans d'anti-symétrie, $\vec B(M)$ a pour direction celle de la droite intersection des deux plans.
+\end{itemize}
+\end{itemize}
+Ayant la direction de $\vec B(M)$, les invariances par rotation ou par translation (de la distribution de courant) permettent d'éliminer des variables. On évite des calculs.
+\newpage
+\section{Le théorème d'Ampère}
+Énoncé : \\ \\
+La circulation  de $\vec B(M)$ sur un contour fermé $\Gamma$ est égal à $\mu_0$ fois l'intensité du courant qui traverse une surface $\Sigma$ quelconque s'appuyant sur $\Gamma$.
+$$\int_\Gamma \vec B(M \in \Gamma).\vec dl = \mu_0 I = \mu_0 \iint_\Sigma \vec j(M \in \Gamma).\vec dS$$
+Si on a déterminé la direction de $\vec B(M)$ et les variables dont il dépend, on essaie de trouver un contour $\Gamma$ sur lequel $\vec B(M).\vec dl = B(M).dl$ au moins sur une partie. \\ \\
+Ex : Un fil dans lequel circule I, le fil est parallèle à Oz et il est infini.
+\begin{itemize}
+\item Point 1 ; Direction de $\vec B(M)$ ?
+\begin{itemize}
+\item Tout plan défini par ($\vec u_\rho, \vec u_\phi$) est plan de symétrie pour la distribution de courant. Pour tous M de l'espace,  il appartient forcément à un de ces plans : \\
+$\vec B(M)$ est perpendiculaire au plan de symétrie : $\vec B(M) = B(M) \vec u_\phi$.
+\item Invariances ?
+\begin{itemize}
+\item Oui par translation le long de $Oz \rightarrow B(M) = B(\rho, \phi)$
+\item Oui par rotation autour de $Oz \rightarrow B(M) = B(\rho)$
+$$\vec B = B(\rho)\vec u_\phi$$
+\end{itemize}
+\end{itemize}
+\item Point 2 : défini par $\Gamma$, contour fermé
+\begin{itemize}
+\item $\Gamma$ : cercle d'axe Oz, de rayon $\rho = OM$
+$$dC_\Gamma = \vec B(M \in \Gamma).\vec dl$$
+$$dC_\Gamma = B(\rho)\vec u_\phi . dl \vec u_\phi = B(\rho)dl$$
+$$C_\Gamma = \int_\Gamma \vec B.\vec dl = \int_\Gamma B(\rho)dl = B(\rho)\int_\Gamma dl = 2\pi \rho B(\rho)$$
+Application au théorème d'Ampère : 
+$$2\pi\rho B(\rho)=\mu_0 \iint_{\Sigma sur \Gamma}\vec j . \vec dS$$
+\end{itemize}
+\end{itemize}
+\end{document}
