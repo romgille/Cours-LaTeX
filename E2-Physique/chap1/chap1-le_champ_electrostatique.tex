@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper,french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{esint}
+\title{ESIEE E2 \\Le champ Électrostatique}
+\author{Romain Gille}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+L'électrostatique est une grandeur constante, indépendante du temps.
+\section{Origine du champ électrostatique}
+Le point de départ est la loi de Coulomb : l'effet de la force $\vec F$ exercée par une charge ponctuelle q, placée en un point P, sur une autre charge q' placée en un point M, soit : 
+$$\vec F_{q \rightarrow q'} = {1 \over {4 \pi \epsilon_0}} {qq' \over r^2} \vec u_{PM}$$
+$$r = PM(distance)$$
+$$\vec u_{PM} = {\vec PM \over PM}$$
+$\epsilon_0 = $ constante diélectrique du vide $ = 8,85.10^{-12}~ F.m^{-1}$ (donné en examen) \\ \\
+Si $qq'>0$ , $\vec F_{q\rightarrow q'}$ va ce P vers M.\\
+Si $qq'<0$ , $\vec F_{q\rightarrow q'}$ va ce M vers P. \\ \\
+Ceci est la description en terme de force-particules mais il existe aussi la description sous la forme champ-énergie.
+$$\vec F_{q \rightarrow q'} = q' {q \over 4 \pi \epsilon_0 r^2}\vec u_{PM}=q' \vec E(M)$$
+Une charge fixe génère un champ électrostatique
+\newpage
+\section{Distribution des charges}
+On observe rarement une charge ponctuelle mais des distributions de charges. \\ \\
+$\vec E(M)$ est créé par une assemblée de charges, il est la somme (vectorielle) des champs individuels engendrés par chacune des charges : c'est le principe de superposition.
+\subsection{Dans le cas d'une distribution discrètes de charges}
+Supposons n charges q, placés en $P_i$. \\ \\
+Chacune de ces charges forment un champ $\vec E_i(M)= {1 \over {4 \pi \epsilon_0}} {q_i \over r_i^2} \vec u_{P_i M}$. \\
+Le champ totalcrée en M est alors $\displaystyle\sum_{i=1}^{N} \vec E_i(M) = \vec E(M)$
+\subsection{Pour une distribution continue}
+Si une charge Q occupe un volume $\Omega$ de dimensions macroscopiques, on découpe $\Omega$ en petits volumes $dT_P$ centrés sur un point P. \\
+On introduit alors la densité volumique de charges $\rho$ qui comptabilise le nombre de charges par unité de volume. \\
+Si $dq_P$ est la charge dans $dT_P$, $\rho(P) = {dq_P \over dT_P}$ en $C.m^{-3}$. \\
+Pour avoir la charge Q contenue dans $\Omega$, on somme toutes les charges $dq_P$ en faisant parcourir à P tout $\Omega$ : 
+$$Q = \iiint_\Omega dq_P =\iiint_\Omega \rho(P) dT_P ~~~ en~~ C$$
+Pour trouver le champ $\vec E(M)$ créé par Q, on calcule le champ élémentaire
+$$d \vec E_P(M) = {1 \over 4 \pi \epsilon_0}{dq_P \over PM^2}$$
+$$\vec E(M) = \iiint_\Omega d\vec E_P(M) = \iiint_\Omega ({1 \over 4\pi\epsilon_0}{\rho(P)dT_P \over PM^2}\vec u_{PM})$$
+\newpage
+Cas particulier : \\
+\subsubsection{} Si $\Omega$ a une dimension très inférieure devant les deux autres, on introduit à partir de la répartition volumique réelle des charges, une répartition surfacique fictive.
+$$dq_P = \rho(P)dT_P = \rho(P)~dl_P~dS_P = \tau(P)dS_P$$
+où $\tau(P)$  = densité surfacique de charges
+$$Q = \iiint_\Omega dq_P = \iint_\Sigma \tau(P)dS_P$$
+$$\vec E(M) = \iint_\Sigma d\vec E(M) = \iint_\Sigma ({1 \over 4}\pi \epsilon_0 {\tau(P) \over PM^2})$$
+\subsubsection{} Si $\Omega$ a une s
+dimension très supérieure devant les deux autres (fil), on définit une densité linéique de charges par le nombre de charges par unité de longueur en $C.m^{-1}$.
+$$dT_P = dl_P d\Sigma_P \rightarrow dq_P = \rho(P)dT_P = \rho(P) d\Sigma_P dl_P$$
+$$\lambda(P) = {dq_P \over dl_P}$$
+$$Q = \int_{fil} \lambda(P)dl_P \rightarrow \vec E(M) = \int_{fil} ({1 \over 4 \pi \epsilon_0}{\lambda(P) \over PM^2} dl_P \vec u_{PM})$$
+\newpage
+\section{Propriétés de symétrie}
+\textit{Pour éviter des calculs inutiles, on va tirer partie des propriétés de $\vec E$ par rapport à un plan de symétrie ou par rapport à un plan d'anti-symétrie de la distribution de charges.}
+\subsection{La distribution de charges présente un plan de symétrie}
+\textit{Cf Schéma avec deux points $P_1$ et $P_2$ de charges q et symétriques par rapport à l'axe Oz.}\\ \\
+On veut déterminer $\vec E(M) = \vec E_1(M)+\vec E_2(M)$ puis le comparer à $\vec E(M')$ où M' est le symétrique de M par rapport à Oz.\\ \\
+On décompose les champs en une somme de composantes perpendiculaires.
+$$E_{1x}(M) = -E_{2x}(M') ~~~ E_{1x}(M') = -E_{2x}(M)$$
+$$E_{1z}(M) = E_{2z}(M') ~~~ E_{1z}(M') = E_{2z}(M)$$
+$$E_x(M) = E_{1x}(M)+E_{2x}(M) = -E_{2x}(M')-E_{1x}(M') = E_x(M')$$
+$$E_z(M) = E_{1z}(M)+E_{2z}(M) = E_{2z}(M')+E_{1z}(M') = E_z(M')$$
+\\
+Résultat général : \\ \\
+Pour un plan de symétrie de la distribution de charges : \\
+\begin{itemize}
+\item La composante de $\vec E$ parallèle est conservée.
+\item La composante de $\vec E$ perpendiculaire est changée en son opposée.
+\end{itemize}
+Cas particulier : \\ \\
+Si $M = M'$, $\vec E(M \in Oz)$ est parallèle à Oz. Il reste seulement à calculer : 
+$$E_z(M) = 2E_{1z}=2E_1 \cos \alpha$$
+$$\cos \alpha = {z \over P_1 M}$$
+\newpage
+A retenir : \\ \\
+Si la ditribution de charges présente un plan de symétrie : 
+\begin{itemize}
+\item $\vec E$ est contenu dans ce plan.
+\item Si un point M appartient aux deux plans de symétrie, alors $\vec E(M)$ a pour direction la droite intersection de ces deux plans.
+\end{itemize}
+\subsection{Par un plan d'antisymétrie}
+On procède de la même manière que par un plan de symétrie de la distribution de charges :
+\begin{itemize}
+\item la composante du champ parallèle au plan est changée en son opposée.
+\item la composante du champ perpendiculaire au plan est conservée.
+\end{itemize}
+\subsection{Propriétés d'invariance}
+Si une distribution de charges n'est pas modifiée par une translation le long d'un axe ou une rotation quelconque autour d'un axe, on dit qu'il y a invariance par translation ou par rotation. \\
+On peut alors éliminer des variables pour les composantes de $\vec E$. \\ \\
+Rappels : \\ \\
+Dans un repère cartésien, les composantes $E_x, E_y, E_z$ dépendent à priori de $x, y, z$.
+\newpage
+\section{Le théorème de Gauss}
+Énoncé : \\ \\
+Le flux du champ électrostatique à travers une surface fermée $\Sigma_f$ qui délimite $\Omega$ est égal à $1 \over \epsilon_0$ fois la charge contenue dans $\Omega$ : 
+$$\iint_{\Sigma_f} \vec E(M \in \Sigma_f) .\vec dS = {Q_int \over \epsilon_0}$$
+Cet outil sert à déterminer $\vec E(M)$ en tout point M de l'espace si on a pu déterminer la direction et la dépendance de $\vec E(M)$. On cherche une surface fermée $\Sigma_f$ sur laquelle $\vec E(M)$ est colinéaire à $\vec dS$ sur une partie au moins. \\
+Prenons pour $\Sigma_f$ la surface qui délimite le cylindre $\Omega$ d'axe Oz et de rayon $\rho = OM$. \\
+$\Sigma_f$ se décompose sur trois surfaces : 
+\begin{itemize}
+\item La surface latérale de $\Omega$, notée $\Sigma_l$, sur laquelle $\vec E$ est uniforme car $\rho$ est fixé. \\
+Un élément de cette surface est orienté par 
+$$\vec dS = dS_\rho \vec u_\rho$$
+$$\theta_{l} = \iint_{\Sigma_l} E(\rho) \vec u_\rho=\iint_{\Sigma_l} E(\rho)dS_\rho=E(\rho)\iint_{\Sigma_l} dS_l$$
+$$dS_l = \rho d\phi dz \Rightarrow\iint_{\Sigma_l}dS\rho=\rho\int_0^{2x}d\phi\int_{-h \over 2}^{h\over 2}dz = 2\pi\rho h $$
+$$\theta_l=2\pi\rho h E(\rho)$$
+\item La surface de base supérieure est orientée par : 
+$$\vec dS_{sup} = dS\vec u_z$$
+$$d\theta_{sup} = E(\rho) \vec u_\rho . dS \vec u_z$$
+\item La surface de base inférieure est orientée par : 
+$$\vec dS_{inf} = -dS\vec u_z$$
+$$d\theta_{inf} = -E(\rho) \vec u_\rho . dS \vec u_z$$
+\end{itemize}
+\newpage
+Finalement : 
+$$\theta = \theta_l = 2 \pi \rho h E(\rho)$$
+$Q_int$ est la charge localisée sur le fil entre $-h \over 2$ et $h \over 2$
+$$Q_int = \int_{fil} dq = \int_{-h \over 2}^{h \over 2} \lambda_0 h$$
+On applique avec le théorème de Gauss : 
+$$2 \pi \rho h E(\rho) = {\lambda_0 h \over \epsilon_0}$$
+$$E(\rho) = {\lambda_0 \over 2\pi\rho\epsilon_0}$$
+$$\vec E(M) = {\lambda \over 2\pi\rho\epsilon_0} \vec u_\rho$$
+\end{document}
