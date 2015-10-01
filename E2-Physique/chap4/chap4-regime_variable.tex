@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper,french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\title{Régime variable}
+\author{Romain Gille}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\section{Equations de Maxwell dans le vide}
+\paragraph{}
+Vide rempli de charges $\rho(\vec r, t)$ et de courant $\vec j(\vec r, t)$
+\subsection{Equation de Maxwell-Faraday}
+\paragraph{}
+Quelque soit le cas considéré, il se ramène à la variation dans le temps du flux magnétique à travers le circuit contenant le courant induit. \\
+De plus, le sens du courant induit est tel que le champ magnétique propre qu'il crée tend à s'opposer à la variation du champ magnétique qui lui a donné naissance : c'est la loi de Lenz. \\
+La circulation de la force motrice :
+$$e = {1 \over q} \oint_C \vec f_m . \vec dl$$
+\subsubsection{Lois de Faraday}
+\paragraph{}
+Expérimentalement, il a été déterminé que 
+$$e = - {d\phi \over dt}~~\text{avec}~~\phi = \iint_S \vec B . \vec dS$$
+Force de Lorentz :
+$$\vec F_m = q \vec E$$
+On utilise la formule de la circulation
+$$\vec F_m = q \vec E \Rightarrow e = \oint_C \vec E . \vec dl$$
+J'applique le théorème de Stokes-Ampère
+$$e = \iint_S \vec rot\vec E . \vec dS$$
+$$\iint_S \vec rot \vec E . \vec dS = - {d \over dt} \iint_S \vec B . \vec dS = - \iint_S {\partial \vec B \over \partial}. \vec dS$$
+$$\iint_S [\vec rot\vec E . \vec dS + {\partial \vec B \over \partial t} . \vec dS] = 0$$
+$$\vec rot \vec E = -{\partial \vec B \over \partial t}~~\text{: Équation de Maxwell-Faraday}$$
+\clearpage
+\begin{align*}
+div(\vec rot \vec E) = 0 &= - div {\partial \vec B \over \partial t} \\
+&= - {\partial \over \partial t}(div \vec B) \\
+& \Rightarrow div \vec B = f(\vec r)~~~\text{or pas de monopôle magnétique} \\
+& \Rightarrow f(\vec r) = 0
+\end{align*}
+En régime variable aussi : 
+$$div\vec B = 0$$
+\subsection{Loi de Maxwell-Gauss}
+\paragraph{}
+Dans le régime variable, la loi de Gauss est toujours valable.
+$$div \vec E = {\rho(\vec r, t) \over \epsilon_0}$$
+\subsection{Loi de Maxwell-Ampère}
+\subsubsection{Loi de conservation de charge}
+\begin{align*}
+Q(t)&=\iiint_V \rho d \tau \\
+{dQ(t) \over dt} &= \iint \vec j . \vec dS \\
+{d \over dt} \iiint_V \rho(\vec r, t)d\tau &= -\iiint_V div \vec j .d\tau \\
+&\Rightarrow \iiint_V [{\partial \rho (\vec r, t) \over \partial t} + div \vec j]. d\tau = 0 \\
+{\partial \rho(\vec r, t) \over \partial t} + div \vec j &= 0 ~~\text{: équation de la continuité }
+\end{align*}
+\subsubsection{Equation de Maxwell-Ampère}
+\paragraph{}
+La loi $\vec rot\vec B = \mu_0 \vec j$ n'est plus valable. \\ \\
+Par contre $\vec rot\vec B = \mu_0 \vec j + \vec f(\vec r, t)$ est plus général et variable. \\
+Déterminons $\vec f(\vec r, t)$ :
+\begin{align*}
+div(\vec rot \vec B)= 0 &= \mu_0 div \vec j + div \vec f(\vec r, t) \\
+&= - \mu_0 {\partial \rho(\vec r, t) \over \partial t} + div \vec f(\vec r, t) \\
+&= - \mu_0 {\partial \over \partial t}(\epsilon_0 div \vec E) + div \vec f(\vec r, t) \\
+&= - \mu_0 \epsilon_0 div ({\partial \vec E \over \partial t}) + div \vec f(\vec r, t) \\
+&= div [-\mu_0 \epsilon_0 { \partial \vec E \over \partial t} + \vec f(\vec r, t)] = 0 \\
+&\Rightarrow \vec f(\vec r, t) = \mu_0 \epsilon_0 {\partial \vec E \over \partial t} \\
+& \vec rot \vec B = \mu_0 \vec j + \mu_0 \epsilon_0 {\partial \vec E \over \partial t} ~~ \text{ : Maxwell $ \rightarrow $ densité de courant de déplacement}
+\end{align*}
+\end{document}
