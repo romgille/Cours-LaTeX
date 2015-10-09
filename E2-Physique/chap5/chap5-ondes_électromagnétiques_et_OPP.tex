@@ -1,0 +1,171 @@
+\documentclass[11pt,a4paper,french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\title{Ondes électromagnétiques dans le vide et ondes planes progressives}
+\author{Romain Gille}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\section{Équations de Maxwell dans le vide de charges et de courants}
+\subsection{Équation d'onde}
+\begin{align*}
+&\vec rot ~\vec rot ~\vec E = \vec grad ~div (\vec E) - \vec \Delta \vec E 
+& \vec grad ~div(\vec E) = \vec 0 ~\text{car pas de charges}\\
+& \vec rot ~\vec rot ~\vec E = \vec \Delta \vec E  
+&\vec rot ~\vec E =  {- \partial \vec B \over \partial t} \\
+& - \vec rot {\partial \vec B \over \partial t} \\
+& - {\partial \over \partial t}(\vec rot ~\vec B)
+& \vec rot ~\vec B = \mu_0 \vec j + \epsilon_0 \mu_0 {\partial \vec E \over \partial t} \\
+& - {\partial \over \partial t} (\mu_0 \vec j + \epsilon_0 \mu_0 {\partial \vec E \over \partial t})
+& \text{On retire}~\mu_0 \vec j ~\text{car il n'y a pas de courant donc}~\vec j = \vec 0 \\
+&  - {\partial \over \partial t} (\epsilon_0 \mu_0 {\partial \vec E \over \partial t}) \\
+& - \epsilon_0\mu_0 {\partial^2 \vec E \over {\partial t}^2}
+\end{align*}
+On a donc 
+\fbox{
+$\vec \Delta \vec E- \epsilon_0 \mu_0 {\partial^2 \vec E \over {\partial t}^2}$
+}
+\paragraph{}
+On fait la même chose avec $\vec B$ : 
+\fbox{
+$\vec \Delta \vec B- \epsilon_0 \mu_0 {\partial^2 \vec B \over {\partial t}^2}$
+}
+$$\vec \Delta \vec S - {1 \over c^2} {\partial^2 \vec S \over {\partial t}^2} = \vec O$$
+Où $\vec S$ représente $\vec E$ ou $\vec B$ \\
+Où c est homogène à une vitesse \\ \\
+C'est une équation d'onde : $c^2 = {1 \over \mu_0 \epsilon_0}$ \\
+Elle est valable pour d'autres ondes tels que le son.
+\begin{align*}
+(\vec \Delta - {1 \over c^2}{\partial^2 \over {\partial t}^2})\vec S &= \vec 0 \\
+\Box^2 \vec S^2 &= \vec 0
+\end{align*}
+Équation de  d'Alembert ($\vec \Box$ : d'Alembertien)
+\clearpage
+\section{Quelques solutions formelles de l'équation d'onde}
+$$\vec \Box^2 \vec S(\vec r, t) = \vec \Delta \vec S(\vec r, t) - {1 \over c^2}{\partial^2 \over {\partial t}^2} \vec S(\vec r, t) = \vec 0$$
+\subsection{Onde plane progressive à une dimension}
+\paragraph{Définition : }
+On dit qu'une onde est plane si, à chaque instant t, la fonction $\vec S(\vec r, t)$ à la même valeur en tout point M appartenant à un plan perpendiculaire à une dimension fixe définie par un vecteur unitaire $\vec n$.
+\begin{align*}
+\vec \Box^2 \vec S(\vec r, t) &= \vec \Delta \vec S(\vec r, t) - {1 \over c^2}{\partial^2 \over {\partial t}^2} \vec S(\vec r, t) = \vec 0 \\
+& = {\partial^2 \over {\partial z}^2} \vec S(\vec r, t) - {1 \over c^2}{\partial^2 \over {\partial t}^2} \vec S(\vec r, t) = \vec 0
+\end{align*}
+On pose $u_\pm = z _\pm ct$ \\
+On veut montrer $S _\pm(u_\pm)$ est solution.
+\begin{align*}
+{\partial \over \partial z} = {\partial u_\pm \over \partial z}{\partial \over \partial u_\pm} = {\partial \over \partial u_\pm} &\Rightarrow {\partial^2 \over {\partial z}^2} = {\partial ^2 \over {\partial u_\pm}^2}\\
+{\partial \over \partial t} = {\partial u_\pm \over \partial t}{\partial \over \partial u_\pm} = _\pm c~{\partial \over \partial u_\pm} &\Rightarrow {\partial^2 \over {\partial t}^2} = c^2 {\partial ^2 \over {\partial u_\pm}^2}
+\end{align*}
+\begin{align*}
+{\partial^2 \vec S _\pm\over {\partial u _\pm}^2} - {1 \over c^2}(c^2 {\partial^2 \vec S _\pm \over {\partial u_\pm}^2}) &= \vec 0 \\
+{\partial^2 \vec S_\pm\over {\partial u_\pm}^2} - {\partial ^2 \vec S_\pm\over {\partial u_\pm}^2} &= \vec 0\\
+\vec 0 &= \vec 0
+\end{align*}
+$$S_\pm (u _\pm)~\text{est solution}$$
+La solution générale est :
+\framebox{$\vec S = \vec S_+ (z +ct) + \vec S_-(z - ct)$}
+\subsection{Onde plane de direction quelconque}
+$\vec n$ vecteur unitaire du sens de propagation \\
+$\vec n(\alpha,\beta,\gamma)$ \\
+$\vec n = \alpha \vec u_x + \beta \vec u_y + \gamma \vec u_z$ \\
+$\alpha^2 + \beta^2 + \gamma^2 = 1$ \\
+Dans le cas particulier précédent où $\vec n$ était le long de $O_z$. \\
+$\vec n = \vec u_z ~~~~~ \vec n.\vec r = \vec u_z .z \vec u_z = z$ \\
+Le cas général est donné par $\vec S(\vec r, t) = \vec S_+(\vec n.\vec r + ct) + \vec S_-(\vec n.\vec r + ct)$ \\
+Les plans ne sont plus perpendiculaire à $\vec u_z$.
+\clearpage
+\subsection{Structure de l'onde plane progressive}
+\paragraph{Définition :}
+Donner la structure de l'onde, c'est préciser l'orientation de $\vec E$ et $\vec B$ par rapport à la direction de propagation et donner la relation entre leurs intensités. \\
+Prenons une onde qui se propage selon z, pas de dépendance en x et y.
+\begin{align*}
+& E_x(z, t)\vec u_x \\
+\vec E = ~~& E_y(z, t) \vec u_y \\
+& E_z(z, t) \vec u_z
+\end{align*}
+\begin{align*}
+& B_x(z, t)\vec u_x \\
+\vec B = ~~& B_y(z, t) \vec u_y \\
+& B_z(z, t) \vec u_z
+\end{align*}
+On sait que dans le vide de charges et de courants : \\
+$$div \vec E = 0$$
+$$div \vec B = 0$$ \\
+$${\partial E_x \over \partial x} + {\partial E_y \over \partial y} + {\partial E_z \over \partial z} = 0 \Rightarrow {\partial E_z \over \partial z} = 0$$ \\
+$${\partial B_x \over \partial x} + {\partial B_y \over \partial y} + {\partial B_z \over \partial z} = 0 \Rightarrow {\partial B_z \over \partial z} = 0$$
+$$E_z = cste~~~~~~~B_z = cste$$
+donc
+\begin{align*}
+& E_x(z, t)\vec u_x \\
+\vec E = ~~& E_y(z, t) \vec u_y \\
+& \vec 0
+\end{align*}
+\begin{align*}
+& B_x(z, t)\vec u_x \\
+\vec B = ~~& B_y(z, t) \vec u_y \\
+&\vec 0
+\end{align*}
+$\vec E$ et $\vec B$ sont dis transverses
+\clearpage
+\begin{align*}
+&{\partial \over \partial x} 
+&&E_x 
+&&&-{\partial E_y \over \partial z}~~~~~~
+&&&& - {\partial B_x \over \partial t}\\
+\vec rot~\vec E = -{\partial \vec B \over \partial t}~\Rightarrow~
+&{\partial \over \partial y}~~~\wedge 
+&&E_y ~~~ = 
+&&&{\partial E_x \over \partial z}~~~ =
+&&&& -{\partial B_y \over \partial t}\\
+&{\partial \over \partial z} 
+&& 0
+&&& 0~~~~~~~~
+&&&& 0\\
+\end{align*}
+$${\partial E_y \over \partial z} = {\partial Bx \over \partial t}~~\text{et}~~ {\partial E_x \over \partial z} = {\partial B_x \over \partial t}$$
+\begin{align*}
+u_\pm = z_\pm~ct &\rightarrow u = z-ct \\ \\
+{\partial u \over \partial z}{\partial E_y \over \partial u} = -{\partial E_y \over \partial u} &= -{\partial u \over \partial t}{\partial B_x \over \partial u} =-c {\partial B_x \over \partial u}\\ \\
+{\partial E_y \over \partial u} = -c {\partial B_x \over \partial u} &\Rightarrow E_y = -cB_x + constante
+\end{align*}
+On trouve également $E_x = cB_y + constante$
+\begin{align*}
+& E_x~\vec u_x \\
+\vec E = ~~& E_y~\vec u_y \\
+& 0
+\end{align*}
+\begin{align*}
+ -&{E_y \over c}~\vec u_x \\
+\vec B = ~~ &{E_x \over c}~\vec u_y \\
+&0
+\end{align*}
+$$\vec E . \vec B = -{E_x E_y \over c} + {E_x E_y \over c} = 0$$
+Donc $\vec E$ et $\vec B$ Sont perpendiculaires.
+\clearpage
+\begin{align*}
+&||\vec E||^2 = E_x^2 + E_y^2 \\ 
+&||\vec B||^2 = {E_y^2 \over c^2} + {E_x^2 \over c^2} = {||\vec E||^2 \over c^2} \\
+& \text{donc} \\
+&||\vec E|| = c~||\vec B||
+\end{align*}
+$$\vec E \wedge \vec B = ||\vec E||~||\vec B||~\vec u_z = {||\vec E||^2 \over c}\vec u_z = c~||\vec B||^2 ~\vec u_z \Rightarrow (\vec u_z, \vec E,\vec B)~\text{est un trièdre rectangle direct}$$
+\section{Ondes sphériques}
+$\vec \Box^2 \vec S(\vec r, t) = \vec 0$ \\
+$\vec S(\vec r, t)$ à la même valeur en tout point d'une sphère de centre le point d'émission. \\
+Donc $\vec S(\vec r, t)$ ne dépend pas de $\phi~\text{et}~\theta \Rightarrow \vec S(\vec r, t) = \vec S(r, t)$. \\
+$\vec \Delta \vec S(\vec r, t) = {1 \over r}{\partial^2 r \vec S(r, t) \over {\partial r}^2}$
+\paragraph{}
+L'équation devient :
+\begin{align*}
+{1 \over r}{\partial^2 r \vec S \over {\partial r}^2} - {1 \over c^2}{\partial^2 \vec S \over {\partial t}^2} &= \vec 0 \\
+{\partial^2 r \vec S \over {\partial r}^2} - {r \over c^2}{\partial^2 \vec S \over {\partial t}^2} &= \vec 0 \\
+{\partial^2 r \vec S \over {\partial r}^2} - {1 \over c^2}{\partial^2 r\vec S \over {\partial t}^2} &= \vec 0 \\
+\end{align*}
+$\vec \Phi(r, t) = r \vec S(r, t)$ est solution de l'équation. \\
+$\vec \Phi(r, t) = \vec F_- (r-ct) + \vec F_+ (r+ct)$ \\
+$\vec S(r, t) = {1 \over r}\vec F_- (r-ct) + {1 \over r} \vec F_+ (r+ct)$ \\ \\
+${1 \over r}\vec F_- (r-ct)$ est une onde sphérique divergente à partir de l'origine à la vitesse c. \\
+${1 \over r} \vec F_+ (r+ct)$ est une onde sphérique convergente vers l'origine à la vitesse c. \\
+\end{document}

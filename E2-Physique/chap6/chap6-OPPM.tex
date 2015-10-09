@@ -1,0 +1,44 @@
+\documentclass[11pt,a4paper,french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\title{Ondes planes progressives monochromatiques, polarisation et représentation complexe}
+\author{Romain Gille}
+\date{\today}
+\begin{document}
+\maketitle
+\newpage
+\section{OPPM}
+\subsection{Solutions factorisées}
+\paragraph{}
+On prend $S(z,t) =  F(z).G(t)$
+\begin{align*}
+&{\partial^2 S(z, t) \over {\partial z}^2} = F''(z) . G(t) &&{\partial^2 S(z, t) \over {\partial t}^2} = F(z) . G''(t) \\
+&{\partial^2 S(z, t) \over {\partial z}^2} -{1 \over c^2}{\partial^2 \vec S \over {\partial t}^2} = 0 &&\Rightarrow F''(z).G(t) - {1 \over c^2} F(z) . G''(t) = 0 \\&
+&& \Rightarrow {F \over F''} = {1 \over c^2}{G''\over G}
+\end{align*}
+Cela n'est possible que si ${\vec F'' \over F} = constante = {1 \over c^2 }{G'' \over G}$. \\
+On pose $constante = k^2$
+\begin{align*}
+{F'' \over F} = k^2 \Rightarrow &F'' - k^2F = 0 \\
+\text{de même}~ &G'' - k^2c^2G = 0
+\end{align*}
+\paragraph{Solutions : }
+\begin{align*}
+&F(z)=\alpha_1 e^{ikz}+ \beta e^{-ikz}\\
+&G(t)=\alpha_2 e^{i\omega t}+ \beta e^{-i\omega t} \\
+S(z, t)=F(z)G(t) &= A cos(kz-\omega t + \phi_a) + B cos(kz + \omega t+ \phi_b)
+\end{align*}
+Prenons l'OPPM se propageant selon les z croissants
+$$S(z, t) = A.cos(kz - \omega t + \phi_a)$$
+C'est une OPPM d'amplitude A, d'unité [celle de la grandeur concernée], de module du vecteur d'onde k d'unité $[rad.m^{-1}]$ et de phase à l'origine $\phi_a$ d'unité $[rad]$ et de pulsation $\omega$ d'unité $[rad.s^{-1}]$ qui se déplace à la vitesse $c = {\omega \over k}[m.s^{-1}]$. \\
+Ce type d'onde possède une double périodicité :\\
+- une dans l'espace (à t fixe) : $k_z = 2\pi ~\text{pour}~ z = \lambda \Rightarrow \lambda= {2 \pi \over k}$ \\
+$\lambda$ longueur d'onde \\
+- une dans le temps (à z fixe) : $\omega t = 2\pi \text{pour} t = T \Rightarrow T={2\pi \over \omega}$ \\
+$T$ période.
+$$\lambda = {2\pi \over k} = {2\pi c \over \omega}$$
+\fbox{
+$\lambda = cT$
+}
+\end{document}
